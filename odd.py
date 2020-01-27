@@ -8,11 +8,13 @@ def divide(n):
         if n % i == 0:
             yield i
     yield n
-    
-s=''  
+s=''
 for j in a:
-    if j==1:
-        s+='1'
+    res=0
+    for i in divide(j):
+        res+=1
+    if res%2==0:
+        s+='0'
     else:
-        s+=divide(j)
+        s+='1'
 print(s)
